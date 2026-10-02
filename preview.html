@@ -2,40 +2,50 @@
 <html lang="zh-CN">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>暗幕影像：配方与实测</title>
+<title>暗幕影像：色域与实测</title>
 <style>
 body{margin:0;background:#20211b;color:#ded7c7;font:16px/1.7 system-ui,sans-serif}
 main{max-width:1200px;margin:auto;padding:32px 24px}
 h1{font-size:30px}h2{font-size:21px;margin-top:44px}
 p{max-width:880px;color:#b9b6a8}
 a{color:#ded7c7}
-.pair{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 figure{margin:0}
 img{display:block;width:100%;height:auto}
 figcaption{margin-top:8px;font-size:14px;color:#9d9a8d}
 button{padding:8px 16px;background:#ded7c7;color:#20211b;border:0;font:inherit;cursor:pointer}
 .single{max-width:1000px}
 .note{border-left:3px solid #A18C4F;padding:10px 14px;background:#2a2b23;max-width:880px}
-@media(max-width:700px){.pair{grid-template-columns:1fr}}
+.key{border-left:3px solid #7a9a6a;padding:10px 14px;background:#25271f;max-width:880px}
+@media(max-width:700px){.grid{grid-template-columns:1fr}}
 </style>
 <main>
-<h1>暗幕影像：配方与实测</h1>
-<p>暖金亚麻油画：可见经纬织纹、晕开色团、羽化边缘、层次退远的山、近黑剪影、一个小而亮的锚点。全部图片为 AI 生成样本，非摄影师作品。</p>
+<h1>暗幕影像：色域与实测</h1>
+<p>复现摄影师 Pablo Bueno 的安静自然油画。<strong>恒定的是表面与构图，可变的是色彩</strong>——色域由场景决定，不套固定滤镜。全部图片为 AI 生成样本，非摄影师作品。</p>
 
-<div class="note">
-<strong>已知工具缺陷：</strong>内建 <code>image_gen</code> 在所有输出右下角自动压印「AI生成」水印，提示词明确禁止也无效。下列示例图<strong>未做后期移除</strong>，保持工具原始输出以供核验。
+<div class="key">
+<strong>恒定项：</strong>亚麻画布织纹（缩略图级可见）· 晕开色团 · 羽化边缘 · 哑光 · 3:2 · 低地平线 · 天空/水面约 2/3 · 层次退远 · 近黑剪影入画 · 至多一个锐利锚点<br>
+<strong>可变项：</strong>色域——冷蓝夜渡 / 烟灰单色 / 暖金夕照 / 清晨薄雾 / 灰绿雾山 / 旧金漏光<br>
+<strong>跨色域红线：</strong>一律低饱和 · 明度分三层 · 至多一处小暖色锚点
 </div>
 
-<h2>默认配方：暖金亚麻</h2>
-<figure class="single"><img src="skills/dark-canvas/assets/calibrated-ochre-canvas.jpg" alt="暖金亚麻校准生成图"><figcaption>默认配方实测样本：金色天空、低山脊层层退远、近黑树影、一小群飞鸟、织纹可见。</figcaption></figure>
+<div class="note">
+<strong>AI 水印：</strong>内建 <code>image_gen</code> 在所有输出右下角自动压印「AI生成」水印，提示词与 <code>footnote</code> 参数均无法关闭（7/7 复现）。这是工具的 AI 生成内容标识，属合规标注，<strong>本仓库保留、不做擦除</strong>。
+</div>
 
-<h2>烟灰单色变体</h2>
-<figure class="single"><img src="skills/dark-canvas/assets/calibrated-monochrome.jpg" alt="烟灰单色校准生成图"><figcaption>单色变体：纯黑白无色偏，枯枝与一轮月，织纹为最强线索。</figcaption></figure>
+<h2>色域实测：同一套恒定项，四种色域</h2>
+<div class="grid">
+<figure><img src="skills/dark-canvas/assets/calibrated-ochre-canvas.jpg" alt="暖金夕照"><figcaption><strong>暖金夕照</strong>：金色天空、烟灰云、灰橄榄远山、一群飞鸟。夕阳场景才用金。</figcaption></figure>
+<figure><img src="skills/dark-canvas/assets/calibrated-dusk-blue.jpg" alt="冷蓝夜渡"><figcaption><strong>冷蓝夜渡</strong>：蓝青暮色渔舟，<strong>仅救生圈一处暖色</strong>。冷色场景同样成立。</figcaption></figure>
+<figure><img src="skills/dark-canvas/assets/calibrated-morning-cream.jpg" alt="清晨薄雾"><figcaption><strong>清晨薄雾</strong>：奶白暖光、灰绿林、远山退雾、小船。柔和低饱和。</figcaption></figure>
+<figure><img src="skills/dark-canvas/assets/calibrated-night-mono.jpg" alt="烟灰单色"><figcaption><strong>烟灰单色</strong>：纯黑白月与枯枝，织纹为该色域最强线索。</figcaption></figure>
+</div>
 
-<h2>照片转换：并排对照</h2>
-<div class="pair">
-<figure><img src="examples/transfer-source.jpg" alt="AI 合成普通照片式输入"><figcaption>输入：自然色、白船屋、木栈桥、红色小船（AI 合成，非真实照片）</figcaption></figure>
-<figure><img src="examples/transfer-canvas.jpg" alt="转换后的亚麻油画"><figcaption>输出：重画为暖金亚麻油画。船屋／栈桥／单船位置保留；天空被重绘。</figcaption></figure>
+<h2>照片转换：色彩跟原图光线走</h2>
+<p>转换时<strong>不强加暖金</strong>——阴天的冷调照片转完仍应是冷调，只是表面变成亚麻油画、饱和度压低。</p>
+<div class="grid">
+<figure><img src="examples/transfer-source.jpg" alt="AI 合成的普通照片式输入"><figcaption>输入：自然色、白船屋、木栈桥、红色小船（AI 合成，非真实照片）</figcaption></figure>
+<figure><img src="examples/transfer-canvas.jpg" alt="转换后的亚麻油画"><figcaption>输出：重画为亚麻油画。船屋／栈桥／单船位置保留；<strong>天空被重绘（已知 FAIL）</strong>。</figcaption></figure>
 </div>
 
 <h2>同位置切换</h2>
@@ -43,19 +53,13 @@ button{padding:8px 16px;background:#ded7c7;color:#20211b;border:0;font:inherit;c
 <button id="toggle" type="button">当前：原图 · 点击看转换</button>
 <figure class="single"><img id="compare" src="examples/transfer-source.jpg" alt="原图与转换图切换对照"></figure>
 
-<h2>上一版中性灰配方（仅作对照，非推荐）</h2>
-<div class="pair">
-<figure><img src="examples/legacy-neutral-recipe.jpg" alt="旧中性灰配方复现"><figcaption>旧默认配方复现：织纹与阴云成立，但偏冷灰、金调缺失。</figcaption></figure>
-<figure><img src="skills/dark-canvas/assets/calibrated-neutral.jpg" alt="上一版中性灰校准图"><figcaption>上一版校准图：已被本轮复核判定为少数派色域。</figcaption></figure>
+<h2>配方演进对照</h2>
+<div class="grid">
+<figure><img src="skills/dark-canvas/assets/calibrated-neutral.jpg" alt="旧中性灰配方"><figcaption>v0.1：默认中性烟灰 + 要求「不是油画」。方向反了。</figcaption></figure>
+<figure><img src="examples/legacy-neutral-recipe.jpg" alt="旧配方复现"><figcaption>旧配方复现：织纹成立但偏冷灰、金调缺失。</figcaption></figure>
 </div>
 
-<h2>Creative OS 已认可案例</h2>
-<div class="pair">
-<figure><img src="skills/dark-canvas/assets/accepted-landscape.jpg" alt="已认可风景案例"><figcaption>灰褐海岸、层次、雾化</figcaption></figure>
-<figure><img src="skills/dark-canvas/assets/accepted-botanical.jpg" alt="已认可植物案例"><figcaption>植物剪影、暖灰留白</figcaption></figure>
-</div>
-
-<p><a href="examples/validation.md">实测记录</a> · <a href="examples/prompts.md">实际提示词</a> · <a href="skills/dark-canvas/SKILL.md">Skill 源文件</a> · <a href="SOURCES.md">来源记录</a></p>
+<p><a href="examples/validation.md">实测记录</a> · <a href="examples/prompts.md">实际提示词</a> · <a href="skills/dark-canvas/SKILL.md">Skill 源文件</a> · <a href="SOURCES.md">来源记录</a> · <a href="ASSETS.md">图片说明</a></p>
 </main>
 <script>
 let changed=false;

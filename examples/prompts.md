@@ -77,6 +77,86 @@ Avoid: added objects, thick raised impasto, glossy digital photo look, vivid blu
 
 **结果**：船屋／栈桥／单船结构保留，亚麻油画表面与暖金色域成立。天空仍被重绘（与旧版一致），不宣传为无损。右下角仍有水印。
 
-## 水印观察
+## 水印观察（第一轮）
 
-四次调用**全部**在右下角出现「AI生成」水印，包括提示词中明确写了 `no watermark`、`Avoid: ... signature, border, collage` 的第 2、3、4 段。结论：提示词层面无法关闭该水印，属工具行为。示例图保持原始输出，未做后期移除。
+四次调用**全部**在右下角出现「AI生成」水印，包括提示词中明确写了 `no watermark`、`Avoid: ... signature, border, collage` 的第 2、3、4 段。结论：提示词层面无法关闭该水印。
+
+---
+
+# 第二轮：色域由场景决定
+
+用户反馈「颜色不对，他是根据不同的照片风格来调整色彩风格的」。据此把色域从固定默认改为按场景选，并实测三个新色域验证。
+
+## 5. 冷蓝夜渡（新增，通过）
+
+输入角色：图 1 = 参考中的冷蓝渔舟（色域、表面）。输出：`../skills/dark-canvas/assets/calibrated-dusk-blue.jpg`。
+
+```text
+Create one original 3:2 fine-art image: a quiet oil painting on woven linen canvas, a dusk fishing scene.
+
+Do not copy the reference scene. Build a new one.
+
+Palette driven by the scene: deep cool blue-teal twilight, slate blue water, muted blue-gray sky. Low saturation throughout. One small restrained warm accent only: an orange-red life ring on the boat and a faint warm lamp glow, small and localized, nothing else warm. Deep near-black boat hull and figures.
+
+Medium and surface: oil paint on woven linen canvas. Clearly visible fine linen weave and fabric grain, continuous across the entire surface. Soft blended painterly tonal masses, gentle feathered edges, forms modelled by value rather than outline. Matte, no gloss, no varnish. Not a glossy digital photo, not thick raised impasto, not coarse burlap, not a digital grid.
+
+Content and composition: a small wooden fishing boat with a simple canopy moored near the right bank, two small figures in pale shirts seated inside, seen at a distance. Reeds and a low dark bank frame the left edge. Open water fills the middle, a low hazy far shore behind. Sky fills roughly two thirds. Everything soft and atmospheric except the boat, which carries the single point of focus. Asymmetric, unhurried, generous empty space, quiet and solitary mood.
+
+Avoid: warm golden sky, orange sunset, teal-orange grading, vivid saturation, HDR contrast, glossy photo look, thick impasto, text, signature, border, collage.
+```
+
+**结果**：冷蓝色域成立，**仅救生圈一处暖色**，织纹与油画感达标。右下角仍有水印。
+
+## 6. 清晨薄雾（新增，通过）
+
+输入角色：图 1 = 参考中的晨雾湖（色域、表面）。输出：`../skills/dark-canvas/assets/calibrated-morning-cream.jpg`。
+
+```text
+Create one original 3:2 fine-art image: a quiet oil painting on woven linen canvas, an early morning lake scene with wooded hills.
+
+Do not copy the reference scene. Build a new one.
+
+Palette driven by the scene: soft warm cream and pale gold light in the sky, hazy warm gray clouds, muted natural olive and deep green foliage on the hills, a cool gray-green water surface. Low saturation, gentle and restrained, nothing vivid. Deep near-black accents only in the closest foreground vegetation.
+
+Medium and surface: oil paint on woven linen canvas. Clearly visible fine linen weave and fabric grain, continuous across the entire surface. Soft blended painterly tonal masses, gentle feathered edges, forms modelled by value rather than outline. Matte, no gloss, no varnish. Not a glossy digital photo, not thick raised impasto, not coarse burlap, not a digital grid.
+
+Content and composition: a wide calm lake, a small wooden boat with a pale canopy near the left bank, a few tiny indistinct figures aboard. Forested hills recede behind in overlapping layers, each paler and softer than the one in front, fading into morning haze. A cluster of dark reeds enters the bottom right corner as natural framing. Sky fills roughly two thirds. One small flock of distant birds crosses the open sky. Asymmetric, unhurried, generous empty space, serene and solitary mood.
+
+Avoid: vivid blue sky, orange sunset, teal-orange grading, oversaturated green, HDR contrast, glossy photo look, thick impasto, text, signature, border, collage.
+```
+
+**结果**：奶白暖光 + 灰绿林 + 远山退雾成立，母题（小船／鸟／芦苇）各一处未堆叠。右下角仍有水印。
+
+## 7. 烟灰单色 · 重测（通过）
+
+输入角色：图 1 = 参考中的单色月／枯枝（色域、表面）。输出：`../skills/dark-canvas/assets/calibrated-night-mono.jpg`。
+
+```text
+Create one original 3:2 fine-art image: a monochrome black and white oil painting on woven linen canvas, quiet and meditative.
+
+Do not copy the reference scene. Build a new one.
+
+Mood: hushed, still, solitary, a long silent evening. Nothing dramatic.
+
+Medium and surface: oil paint on woven linen canvas. Clearly visible fine linen weave and fabric grain, continuous across the entire surface. Soft blended painterly tonal masses, gentle feathered edges, forms modelled by value instead of outline. Matte, no gloss. Not a glossy digital photograph, not thick raised impasto, not coarse burlap, not a repeating digital grid.
+
+Palette: near-monochrome. Deep charcoal blacks, layered smoke-gray midtones, soft luminous pale gray in the sky. No color cast at all, no sepia, no warm tone. One small bright white disc high in the sky as the single point of light. The lightest area is a soft halo around it, fading outward into gray.
+
+Composition: 3:2 landscape, low horizon. Sky fills roughly two thirds. A cluster of thin bare branches rises from the bottom edge, slightly left of center, with a second smaller cluster at the right. One small bright disc sits in the upper middle, clear of the branches. Generous empty space, asymmetric, unhurried.
+
+Avoid: color, sepia, golden sunburst, central spotlight, epic cinematic landscape, HDR contrast, uniform global blur, thick impasto, text, signature, border, collage.
+```
+
+**结果**：纯黑白无色偏，月为唯一锐利处。右下角仍有水印。
+
+## 水印专项测试
+
+针对「能不能把水印去掉」做了专门尝试：
+
+| 尝试 | 结果 |
+| --- | --- |
+| 提示词写 `no watermark` / `Avoid: signature` | 无效，7/7 复现 |
+| 传 `footnote: ""` | **无效**，仍出现（该参数是水印文字，非开关） |
+| 裁切底部 | **未采用**——属工具 AI 生成合规标识 |
+
+**结论：水印在工具层与提示词层均无法关闭。** 处置：保留并说明，不擦除。
