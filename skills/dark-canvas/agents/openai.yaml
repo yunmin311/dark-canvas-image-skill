@@ -1,4 +1,4 @@
 interface:
   display_name: "暗幕影像"
-  short_description: "Generate and transform textured dark nature images"
-  default_prompt: "用 $dark-canvas 生成一张灰绿阴云与植物剪影的织物质感图片。"
+  short_description: "Generate quiet warm-ochre linen oil-painting landscapes"
+  default_prompt: "用 $dark-canvas 生成一张暖金亚麻油画质感的横幅风景：金色天空、层次退远的山、近黑树影剪影、一小群飞鸟，织纹可见，不要文字。"

@@ -1,29 +1,65 @@
 # 可执行提示词
 
-将方括号替换为本次要求。删除不适用的语句；不要把所有变体塞进一次调用。固定提示词不保证固定结果。
+将方括号替换为本次要求，删除不适用语句。**一次只用一个变体。** 固定提示词不保证固定结果。
 
-## 从零生成
+下面三段模板均于 2026-10-02 用内建 `image_gen` 实测通过，对应 `examples/validation.md` 的记录。
 
-```text
-Create one original [aspect ratio] fine-art photographic image of [requested subject and scene].
-Style references: image 1 = surface and tonal reference; image 2 = silhouette/negative-space reference. Use their visual language, not their exact scenes.
-Composition: [user composition; otherwise asymmetric framing, broad quiet sky or mist, peripheral natural silhouettes, one small focal anchor only when suitable].
-Photographic space and believable organic shapes, with fine flat photographic print texture: tiny softly visible crosshatched fibers or dot-like marks continuous through light and dark areas, matte, no raised threads. [For the Creative OS variant only: a more visible fine linen weave]. Not coarse burlap or oil-paint brushwork.
-Palette: [default neutral monochrome smoke-gray with a trace of warm gray; otherwise muted olive / warm parchment OR restrained ochre / brown-black]. Truly dark silhouette masses, layered gray midtones, softly diffuse lighter sky; subdued saturation, atmospheric depth. Selectively readable edges with softly fading distance. No central golden sunburst or epic cinematic landscape unless requested.
-Optional variant: [local directional motion blur OR a restrained edge light leak; omit by default].
-No text, watermark, signature, decorative border or collage. Avoid vivid blue skies, orange-teal grading, HDR crispness, thick paint, pixel grids and uniform blur.
-```
-
-## 将照片转换为暗幕质感
+## 从零生成（默认暖金亚麻，实测通过）
 
 ```text
-Edit image 1, the source photograph. Images 2 and 3 are style references only.
-Preserve the source's aspect ratio, crop, perspective, horizon, subject identities, object count and major positions. Specifically preserve [list actual landmarks/people/objects after viewing the source]. Do not borrow or insert objects from the style references.
-Transform tonal rendering and print surface to match the reference: low-saturation [default neutral smoke-gray; otherwise chosen palette], deep but differentiated charcoal shadows, layered smoky midtones and soft gray highlights. Add fine flat softly visible crosshatched fiber/dot-like print texture continuously across the photographic image. [Only for the Creative OS variant: fine linen warp/weft texture, as though the print has soaked into a matte fabric surface]. Keep texture small and subtle, never coarse burlap or a digital grid. Do not add a golden central spotlight or reshape clouds dramatically.
-Maintain photographic structure and recognisable important edges. Soften only [source-appropriate background areas]; keep [faces, buildings, foreground landmarks] readable. [Motion/edge leak only if explicitly selected].
-Change the photographic rendering and surface; retain the scene. No new text, objects, signature, watermark, decorative border or collage. Avoid oil-paint brushwork, uniform sepia, crushed full-frame blacks, oversaturation and global blur.
+Create one original landscape-format image, 3:2, in the visual family of the two reference images: an oil-painting-like, quiet poetic nature scene.
+
+Do not copy either reference scene. Build a new one.
+
+Mood: hushed, still, solitary, meditative. Nothing dramatic, nothing heroic.
+
+Medium and surface: an oil painting on woven linen canvas. Clearly visible fine linen canvas weave and fabric grain, continuous across the entire image including sky, water and silhouettes. Soft blended painterly tonal masses, gentle feathered edges, forms modelled by value rather than by line. Matte, no gloss, no varnish. Not a glossy digital photo, not thick raised impasto, not coarse burlap, not a repeating digital grid.
+
+Palette: warm golden ochre and amber light in the sky, smoky neutral gray clouds, muted olive and sepia in the middle distance, deep near-black charcoal silhouettes. Very low saturation, except one small restrained warm accent. No vivid blue, no cyan, no orange-teal grading, no HDR punch.
+
+Composition: 3:2 landscape, horizon low. Sky and luminous mist fill roughly two thirds of the frame. A low band of soft hazy hills recedes in layers, each paler than the one in front. Dark near-black foliage masses enter from the bottom and lower corners as natural framing. One small loose flock of five or six tiny distant birds crosses the open upper sky as the only sharp accent. Everything else stays soft and atmospheric. Asymmetric, unhurried framing with generous empty space.
+
+Avoid: golden sunburst, central spotlight, epic cinematic landscape, HDR crispness, heavy saturation, uniform global blur, thick painterly impasto, text, signature, border, collage.
 ```
+
+## 烟灰单色变体（实测通过）
+
+```text
+Create one original 3:2 fine-art image: a monochrome black and white oil painting on woven linen canvas, quiet and meditative.
+
+Do not copy the reference scene. Build a new one.
+
+Mood: hushed, still, solitary, a long silent evening. Nothing dramatic.
+
+Medium and surface: oil paint on woven linen canvas. Clearly visible fine linen weave and fabric grain, continuous across the entire surface. Soft blended painterly tonal masses, gentle feathered edges, forms modelled by value instead of outline. Matte, no gloss. Not a glossy digital photograph, not thick raised impasto, not coarse burlap, not a repeating digital grid.
+
+Palette: near-monochrome. Deep charcoal blacks, layered smoke-gray midtones, soft luminous pale gray in the sky. No color cast at all, no sepia, no warm tone. One small bright white disc high in the sky as the single point of light. The lightest area is a soft halo around it, fading outward into gray.
+
+Composition: 3:2 landscape, low horizon. Sky fills roughly two thirds. A cluster of thin bare branches rises from the bottom edge, slightly left of center, with a second smaller cluster at the right. One small bright disc sits in the upper middle, clear of the branches. Generous empty space, asymmetric, unhurried.
+
+Avoid: color, sepia, golden sunburst, central spotlight, epic cinematic landscape, HDR contrast, uniform global blur, thick impasto, text, signature, border, collage.
+```
+
+## 将照片转换为亚麻油画（实测通过）
+
+```text
+Edit image 1, the source photograph. Image 2 is a style reference only for palette, mood and surface — never for scene content.
+
+Keep the source's exact 3:2 crop, camera position, perspective and horizon. Preserve every object and its position: [列出查看原图后确认的地标／人物／物件]. Do not add birds, boats, buildings or any object that is not in the source.
+
+Repaint the scene as an oil painting on woven linen canvas. Apply a clearly visible fine linen canvas weave and fabric grain, continuous across sky, water and silhouettes. Use soft blended painterly tonal masses and gentle feathered edges, forms modelled by value rather than outline. Matte surface, no gloss, no varnish.
+
+Palette: warm golden ochre and amber light in the sky, smoky neutral gray clouds, muted olive and sepia in the middle distance, deep near-black charcoal shadows. Very low saturation. [若有彩色物件] 其颜色转为低饱和氧化土色，不是鲜艳点缀。
+
+Keep [关键结构：屋脊、门窗、轮廓] readable. Soften only the distant background. No golden sunburst, no central spotlight, no dramatic new cloud structures, no uniform blur.
+
+Avoid: added objects, thick raised impasto, glossy digital photo look, vivid blue, orange-teal grading, HDR contrast, text, signature, border, collage.
+```
+
+**这是重绘，不是滤镜。** 已知风险：模型会重绘天空云形并轻微改动细节，因此不要宣传为无损／逐像素保真。
 
 ## 交付记录
 
-写出：最终提示词、每张输入的角色、生成/编辑工具、输出路径、对照参考的可见偏差。隐私路径可以保留在本地记录；公开记录使用仓库相对路径，不放分享令牌或个人文件夹地址。
+写出：最终提示词、每张输入的角色、生成／编辑工具、输出路径、对照参考的逐项偏差、以及**右下角是否出现工具水印**。
+
+隐私路径可留在本地记录；公开记录使用仓库相对路径，不放分享令牌或个人文件夹地址。

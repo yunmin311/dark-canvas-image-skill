@@ -1,47 +1,82 @@
 # 本次实际调用的提示词
 
-工具：内建 image_gen；日期：2026-10-02。以下是调用时的完整文本。参考路径改写为公开仓库相对路径；执行时使用本机原始 PNG，公开参考 JPEG 与其画面相同。
+工具：内建 `image_gen`；日期：2026-10-02；size `1536x1024`，quality `high`。
+以下为**实际调用时的完整文本**。第三方参考图路径改写为本地说明；公开仓库不含这些文件。
 
-## 从零生成
+## 1. 旧中性灰配方复现（对照用）
 
-此测试使用旧 Creative OS 暖灰案例，在清晰摄影参考到达前执行，不代表修订后的默认配方。
-
-输入顺序：已有风景案例（色调与表面）；已有植物案例（剪影与留白）。输出：`generate-cloud-bird.png`。
-
-```text
-Create one original landscape-format fine-art photographic image, approximately 3:2. A small dark bird gliding high over an irregular line of willow trees on a lake bank, viewed upward; sky occupies 70 percent, trees enter from the lower right and left edges leaving the center open. Physical look: darkroom photographic print fused into finely woven linen, visible tiny irregular warp/weft fibers across sky AND silhouettes, warm smoke gray / muted olive / parchment highlights with deep charcoal silhouettes. Brooding diffuse cloud banks with luminous cloud openings, compressed midtones, softly halated light, no bright blue, no orange sunset. Photographic observed nature with a haunting quiet unresolved mood, soft atmospheric depth; foliage still readable at selected edges, never an oil painting. Dense but fine textile texture—not coarse burlap, not regular digital pixel grid. Asymmetric open framing, no title, no watermark, no ornate borders, no collage, no signature. This is a completely new scene. Match the dark, low-saturation woven photographic surface and tonal restraint of the supplied style references; don't reproduce their scene or subjects' exact arrangement.
-```
-
-## 转换测试的合成输入
-
-无参考图。输出：`transfer-source.png`。此图是 AI 生成的普通照片式输入，不是真实拍摄照片。
-
-```text
-Generate one ordinary realistic color photograph, landscape 3:2: a modest white rectangular wooden boathouse with a dark gray pitched roof on the right bank of a calm lake, a simple wooden dock extends from lower right toward the middle, one small red rowing boat tied to the dock, a leafy tree enters from the left edge, low hills across the far lake, sky occupies the upper half. Bright overcast afternoon, natural green foliage, soft blue-gray water and sky, ungraded clean digital camera photo, realistic detail and perspective, no print texture, no linen, no grain effect, no vignette, no paintings, no text, no people, no birds. This is an AI-generated test input photograph for a later image style-transfer experiment.
-```
-
-## 照片式图像转换
-
-此测试也是 Creative OS 暖灰变体，发现较强的天空重绘偏差。中性灰转换另见下方。
-
-输入顺序：`transfer-source.png`（编辑目标）；已有风景案例（色调与表面）；已有植物案例（剪影与表面）。输出：`transfer-dark-canvas.png`。
-
-```text
-Edit image 1, the source photograph. Image 2 is the tonal/surface style reference and image 3 is the botanical silhouette/surface style reference, not scene content. Preserve image 1's 3:2 crop, perspective, horizon, object count, and major positions: leafy tree on left, white wooden pitched-roof boathouse at right partly cropped, its doorway and window, diagonal wooden dock extending from lower right toward center, the ONE small rowing boat just left of the dock, rocks below the boathouse, hills across the lake. No new birds, kites, buildings, clouds-as-objects or extra boats. Transform rendering and surface only. Apply low-saturation smoke-gray, subdued gray olive and warm parchment, deep but differentiated charcoal foliage shadows, smoky layered midtones and soft restrained warm-gray sky highlights. Boat red becomes a small subdued oxidized-earth color, not a vivid accent. House walls remain relatively lighter but toned down. Add fine irregular linen warp/weft texture continuously over all areas, as though a darkroom photographic print has soaked into matte fabric, matching reference images 2 and 3; fine fibers not coarse burlap or digital grid. Keep photographic structure and recognizable dock, boat, roof, door and window edges. Soften distant hills and cloud edges slightly, retain important geometry. Preserve all scene content, no global blur, no thick paint or brushstrokes, no text, no watermark, no borders, no collage. The result should visibly belong to the same subdued dark textile photographic family as references 2 and 3 while still being the SAME source scene.
-```
-
-## 中性灰校准生成
-
-输入顺序：用户清晰阴云飞鸟参考（色调、表面）；用户清晰枝叶参考（剪影、细纹）。第三方参考文件仅保存在本地，不随公开仓库分发。输出：`../skills/dark-canvas/assets/calibrated-neutral.png`。
+输入角色：图 1 = 阴云飞鸟（色域、表面），图 2 = 枝叶（剪影、细纹）。输出：`legacy-neutral-recipe.jpg`。
 
 ```text
 Generate a new original 3:2 photograph-style image. Use image 1 only as the reference for neutral gray tonality, cloudy light, fine flat print surface and restrained edge wear. Use image 2 only as the reference for natural dark foliage edges and the subtle fine surface texture. Do not reproduce either reference composition. New scene: looking upward across a quiet rural valley, uneven distant tree silhouettes occupy only a narrow bottom band, a close sparse leaf branch enters the top right, one very small distant bird in the left third of the open sky. Mostly sky, natural irregular overcast cloud layers, pale diffuse silver-gray top sky gradually deepening to charcoal cloud at lower right, no golden sunburst or central dramatic spotlight. Neutral monochrome with only a trace of warm gray, truly black silhouettes against lighter sky; photographic tonal gradients and restrained softness. Closely match the reference's fine flat softly visible crosshatched print surface: tiny evenly distributed fiber/dot-like marks, no raised threads, no heavy canvas or burlap, no painterly marks, texture must be quieter than the imagery and uninterrupted across the frame. Very faint irregular print wear near extreme edges, no drawn frame or heavy vignette. A candid atmospheric photographic observation, simple unresolved framing, not an epic fantasy landscape, not a painting. No warm sepia or amber grading, no orange leak, no added objects, no text, no signature, no watermark, no collage.
 ```
 
-## 中性灰转换
+**结果**：织纹与阴云成立，但整体偏冷灰、金调缺失，且右下角出现「AI生成」水印。保留仅作对照。
 
-输入顺序：`transfer-source.png`（编辑目标）；用户清晰阴云飞鸟参考（色调、表面）；用户清晰枝叶参考（剪影、细纹）。输出：`transfer-neutral.png`。
+## 2. 暖金亚麻默认配方（修正后，通过）
+
+输入角色：图 1 = 暖金群鸟／云（色域、表面），图 2 = 灰绿山峦（层次、留白）。输出：`../skills/dark-canvas/assets/calibrated-ochre-canvas.jpg`。
 
 ```text
-Edit image 1, the source photograph. Images 2 and 3 are tonal and surface style references only. Keep the exact source framing, scene, camera position, crop and perspective: leafy tree entering from left, white wooden boathouse with pitched roof and a doorway plus one visible window on right, diagonal dock from lower right to middle, exactly one small boat at the dock, rocks along the bank and layered distant hills. Preserve the original cloud layout and diffuse overcast lighting; do not add a sunburst, central light beam or new dramatic cloud structures. Match reference 2's neutral monochrome smoke-gray tonality with only an extremely slight warm-gray tint, pale silvery sky gradients, darker soft distant hills, deep nearly black foreground foliage and shadows. Preserve readable roof, door, window, boat outline, dock posts and planks, without crisp HDR. Match reference 2 and 3's very fine flat subdued photographic-print crosshatch texture, tiny softly visible fiber/dot-like marks continuous over the whole photograph, no raised linen threads, no heavy burlap or warm sepia. Light irregular print wear at extreme edges is acceptable but no drawn border. Boat becomes subdued dark gray; retain its position and structure. The surface and tonal rendering change; all source objects remain in place and identifiable. No added birds, kites or other objects, no painterly strokes, no global blur, no text, watermark or signature.
+Create one original landscape-format image, 3:2, in the visual family of the two reference images: an oil-painting-like, quiet poetic nature scene.
+
+Do not copy either reference scene. Build a new one.
+
+Mood: hushed, still, solitary, meditative. Nothing dramatic, nothing heroic.
+
+Medium and surface: an oil painting on woven linen canvas. Clearly visible fine linen canvas weave and fabric grain, continuous across the entire image including sky, water and silhouettes. Soft blended painterly tonal masses, gentle feathered edges, forms modelled by value rather than by line. Matte, no gloss, no varnish. Not a glossy digital photo, not thick raised impasto, not coarse burlap, not a repeating digital grid.
+
+Palette: warm golden ochre and amber light in the sky, smoky neutral gray clouds, muted olive and sepia in the middle distance, deep near-black charcoal silhouettes. Very low saturation, except one small restrained warm accent. No vivid blue, no cyan, no orange-teal grading, no HDR punch.
+
+Composition: 3:2 landscape, horizon low. Sky and luminous mist fill roughly two thirds of the frame. A low band of soft hazy hills recedes in layers, each paler than the one in front. Dark near-black foliage masses enter from the bottom and lower corners as natural framing. One small loose flock of five or six tiny distant birds crosses the open upper sky as the only sharp accent. Everything else stays soft and atmospheric. Asymmetric, unhurried framing with generous empty space.
+
+Avoid: golden sunburst, central spotlight, epic cinematic landscape, HDR crispness, heavy saturation, uniform global blur, thick painterly impasto, text, signature, border, collage.
 ```
+
+**结果**：织纹在缩略图可见、暖金主调成立、油画感成立、群鸟母题到位。右下角仍有「AI生成」水印。
+
+## 3. 烟灰单色变体（通过）
+
+输入角色：图 1 = 单色月／枯枝（色域、表面）。输出：`../skills/dark-canvas/assets/calibrated-monochrome.jpg`。
+
+```text
+Create one original 3:2 fine-art image: a monochrome black and white oil painting on woven linen canvas, quiet and meditative.
+
+Do not copy the reference scene. Build a new one.
+
+Mood: hushed, still, solitary, a long silent evening. Nothing dramatic.
+
+Medium and surface: oil paint on woven linen canvas. Clearly visible fine linen weave and fabric grain, continuous across the entire surface. Soft blended painterly tonal masses, gentle feathered edges, forms modelled by value instead of outline. Matte, no gloss. Not a glossy digital photograph, not thick raised impasto, not coarse burlap, not a repeating digital grid.
+
+Palette: near-monochrome. Deep charcoal blacks, layered smoke-gray midtones, soft luminous pale gray in the sky. No color cast at all, no sepia, no warm tone. One small bright white disc high in the sky as the single point of light. The lightest area is a soft halo around it, fading outward into gray.
+
+Composition: 3:2 landscape, low horizon. Sky fills roughly two thirds. A cluster of thin bare branches rises from the bottom edge, slightly left of center, with a second smaller cluster at the right. One small bright disc sits in the upper middle, clear of the branches. Generous empty space, asymmetric, unhurried.
+
+Avoid: color, sepia, golden sunburst, central spotlight, epic cinematic landscape, HDR contrast, uniform global blur, thick impasto, text, signature, border, collage.
+```
+
+**结果**：纯黑白无色偏，织纹为该变体最强线索。右下角仍有水印。
+
+## 4. 照片转换为亚麻油画（通过，云形重绘 FAIL）
+
+输入顺序：`transfer-source.jpg`（编辑目标，本文件同目录）；图 2 = 暖金群鸟／云（色域、表面）。输出：`transfer-canvas.jpg`。
+
+```text
+Edit image 1, the source photograph. Image 2 is a style reference only for palette, mood and surface — never for scene content.
+
+Keep the source's exact 3:2 crop, camera position, perspective and horizon. Preserve every object and its position: the leafy tree entering from the left edge, the white wooden boathouse with its pitched roof on the right bank, its doorway and window, the diagonal wooden dock running from the lower right toward the centre, exactly ONE small rowing boat moored at the dock, the rocks along the bank, and the layered distant hills. Do not add birds, boats, buildings or any object that is not in the source.
+
+Repaint the scene as an oil painting on woven linen canvas. Apply a clearly visible fine linen canvas weave and fabric grain, continuous across sky, water and silhouettes. Use soft blended painterly tonal masses and gentle feathered edges, forms modelled by value rather than outline. Matte surface, no gloss, no varnish.
+
+Palette: warm golden ochre and amber light in the sky, smoky neutral gray clouds, muted olive and sepia in the middle distance, deep near-black charcoal foliage shadows and dock. Very low saturation. The boat's red becomes a small subdued oxidized-earth tone, not a vivid accent. The boathouse walls stay relatively lighter but lose all clean white.
+
+Keep the roof, door, window, boat outline, dock posts and planks readable. Soften only the distant hills and cloud edges. No golden sunburst, no central spotlight, no dramatic new cloud structures, no uniform blur.
+
+Avoid: added objects, thick raised impasto, glossy digital photo look, vivid blue, orange-teal grading, HDR contrast, text, signature, border, collage.
+```
+
+**结果**：船屋／栈桥／单船结构保留，亚麻油画表面与暖金色域成立。天空仍被重绘（与旧版一致），不宣传为无损。右下角仍有水印。
+
+## 水印观察
+
+四次调用**全部**在右下角出现「AI生成」水印，包括提示词中明确写了 `no watermark`、`Avoid: ... signature, border, collage` 的第 2、3、4 段。结论：提示词层面无法关闭该水印，属工具行为。示例图保持原始输出，未做后期移除。
