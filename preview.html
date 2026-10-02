@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>暗幕影像：参考与实测</title>
+<style>
+body{margin:0;background:#20211b;color:#ded7c7;font:16px/1.7 system-ui,sans-serif}main{max-width:1200px;margin:auto;padding:32px 24px}h1{font-size:30px}h2{font-size:21px;margin-top:40px}p{max-width:850px;color:#b9b6a8}a{color:#ded7c7}.pair{display:grid;grid-template-columns:1fr 1fr;gap:20px}figure{margin:0}img{display:block;width:100%;height:auto}figcaption{margin-top:8px}button{padding:8px 16px;background:#ded7c7;color:#20211b;border:0;font:inherit;cursor:pointer}.single{max-width:1000px}@media(max-width:700px){.pair{grid-template-columns:1fr}}
+</style>
+<main>
+<h1>暗幕影像：参考与实测</h1>
+<p>两张已认可案例校准质感。下面分别展示从零生成，以及用 AI 合成的普通照片式输入做转换。相近的视觉语言不等于像素一致，转换测试也不证明真实照片中的人物和文字能精确保留。</p>
+<h2>按清晰参考校准的中性灰生成图</h2>
+<figure class="single"><img src="skills/dark-canvas/assets/calibrated-neutral.png" alt="中性灰校准生成图"><figcaption>默认配方样本：近黑白、细平纹、阴云与剪影。待用户视觉验收。</figcaption></figure>
+<h2>已认可的 Creative OS 暖灰案例</h2>
+<div class="pair">
+<figure><img src="skills/dark-canvas/assets/accepted-landscape.jpg" alt="已认可风景案例"><figcaption>灰褐海岸、织物表面、雾化层次</figcaption></figure>
+<figure><img src="skills/dark-canvas/assets/accepted-botanical.jpg" alt="已认可植物案例"><figcaption>植物剪影、暖灰留白、细密织纹</figcaption></figure>
+</div>
+<h2>Creative OS 暖灰：从零生成实测</h2>
+<figure class="single"><img src="examples/generate-cloud-bird.png" alt="从零生成的树冠与飞鸟"><figcaption>阴云与树冠；湖岸和水面不明显，已记为场景偏差。</figcaption></figure>
+<h2>中性灰图像转换：并排对照</h2>
+<div class="pair">
+<figure><img src="examples/transfer-source.png" alt="AI 合成普通照片式输入"><figcaption>输入：自然色、白色船屋、木栈桥、红色小船</figcaption></figure>
+<figure><img src="examples/transfer-neutral.png" alt="转换后的暗幕图像"><figcaption>输出：暗幕色调与织物表面</figcaption></figure>
+</div>
+<h2>同位置切换</h2>
+<p>点击切换原图与转换结果，检查屋顶、窗、栈桥和小船的位置。</p>
+<button id="toggle" type="button">当前：原图 · 点击看转换</button>
+<figure class="single"><img id="compare" src="examples/transfer-source.png" alt="原图与转换图切换对照"></figure>
+<p><a href="examples/validation.md">实测记录</a> · <a href="examples/prompts.md">实际提示词</a> · <a href="skills/dark-canvas/SKILL.md">Skill 源文件</a></p>
+</main>
+<script>
+let changed=false;document.getElementById('toggle').onclick=()=>{changed=!changed;document.getElementById('compare').src=changed?'examples/transfer-neutral.png':'examples/transfer-source.png';document.getElementById('toggle').textContent=changed?'当前：转换 · 点击看原图':'当前：原图 · 点击看转换';};
+</script>
+</html>

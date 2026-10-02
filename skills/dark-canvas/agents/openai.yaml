@@ -1,0 +1,4 @@
+interface:
+  display_name: "暗幕影像"
+  short_description: "Generate and transform textured dark nature images"
+  default_prompt: "用 $dark-canvas 生成一张灰绿阴云与植物剪影的织物质感图片。"

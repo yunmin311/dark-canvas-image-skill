@@ -1,0 +1,6 @@
+local-reference/
+__pycache__/
+*.pyc
+.DS_Store
+tmp/
+dist/
