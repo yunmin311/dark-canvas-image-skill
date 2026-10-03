@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-03",
+  "tool": "Codex built-in image_gen",
+  "source_material": "rough-linen-ao-1k.jpg (Poly Haven CC0)",
+  "calls": 3,
+  "post_processing": "none; original output copies",
+  "files": [
+    {
+      "file": "worn-canvas-guide.png",
+      "role": "light old marks",
+      "type": "AI-generated material guide, not photograph of old canvas",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 3860437,
+      "sha256": "ce4c3d7e835c04cbee544dc7994999d31fa5cafb88a79174357cae99e672b9b5"
+    },
+    {
+      "file": "distressed-canvas-guide.png",
+      "role": "visible old marks and rubbed pigment loss",
+      "type": "AI-generated material guide, not photograph of old canvas",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 3592760,
+      "sha256": "0fddaf10edb8297d0ef11b7725f0619ad56a2f9d118fad96119296f997f5983d"
+    }
+  ],
+  "selection": "Light guide from initial call; visibly worn guide from corrected version. Initial worn guide exposed the weave too strongly and was not selected. Cloth contrast/scale must be adapted to the artwork, not copied as final image contrast."
+}

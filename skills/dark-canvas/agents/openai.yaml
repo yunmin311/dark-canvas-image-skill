@@ -1,4 +1,4 @@
 interface:
   display_name: "暗幕影像"
-  short_description: "Preserve colors; Chinese brush feeling on real linen"
-  default_prompt: "用 $dark-canvas 保持原图配色，以毛笔笔意、统一色面与真实布纹生成诗意图片，生成并检查最终图片，修正偏差后交付。"
+  short_description: "Edit photos with poetic forms and selected canvas surfaces"
+  default_prompt: "用 $dark-canvas 以图生图保留原色，按作品选择毛笔、剪影或雾化，再选布面、做旧与晕影，统一诗意并看图修正后交付。"
