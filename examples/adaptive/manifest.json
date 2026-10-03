@@ -1,0 +1,67 @@
+{
+  "street": {
+    "selected_version": 2,
+    "dimensions": [
+      [
+        1,
+        1536,
+        1024
+      ],
+      [
+        2,
+        1536,
+        1024
+      ]
+    ]
+  },
+  "stilllife": {
+    "selected_version": 3,
+    "dimensions": [
+      [
+        1,
+        1254,
+        1254
+      ],
+      [
+        2,
+        1254,
+        1254
+      ],
+      [
+        3,
+        1254,
+        1254
+      ]
+    ]
+  },
+  "portrait": {
+    "selected_version": 2,
+    "dimensions": [
+      [
+        1,
+        1024,
+        1536
+      ],
+      [
+        2,
+        1024,
+        1536
+      ]
+    ]
+  },
+  "lake": {
+    "selected_version": 2,
+    "dimensions": [
+      [
+        1,
+        1448,
+        1086
+      ],
+      [
+        2,
+        1448,
+        1086
+      ]
+    ]
+  }
+}

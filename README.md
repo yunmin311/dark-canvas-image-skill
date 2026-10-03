@@ -1,35 +1,38 @@
 # 暗幕影像 · Dark Canvas
 
-给图片生成 agent 的摄影风格 skill：中性烟灰、自然剪影、阴云留白、细密平面印相。支持从零生图与已有照片转换；旧 Creative OS 暖灰织物效果保留为独立变体。
+给图像生成 agent 的诗意摄影印相风格 skill：根据主题与当前参考，分别选择色彩、表面、清晰度和构图；生成后查看实际图片、针对偏差修正、选择最佳版本，交付成图与检查记录。
 
-![中性灰校准生成图](skills/dark-canvas/assets/calibrated-neutral.png)
-
-上图按用户补发的清晰参考生成，是近似校准样本，尚未获得用户视觉验收，不是摄影师作品。下面两张为用户已认可的旧 Creative OS 案例，色调更暖、织纹更明显。
-
-![已认可植物案例](skills/dark-canvas/assets/accepted-botanical.jpg)
-
-![已认可风景案例](skills/dark-canvas/assets/accepted-landscape.jpg)
-
-这是基于参考图可见特征编写的原创工作流，不是摄影师官方工具，不承诺像素一致或每次生成完全相同。
+**v0.4.0 将适配范围扩展到人物、城市、室内静物和自然。** 参考中的鸟、船、低地平线、暖金色、3:2 画幅与油画笔触都不是通用必选项。用户要求其他风格时执行新目标；照片转换优先保留内容与裁切。
 
 ## 使用
 
-将 `skills/dark-canvas` 文件夹复制到你的 agent 的技能目录，或从 [Releases](https://github.com/yunmin311/dark-canvas-image-skill/releases) 下载技能 ZIP 并解压其中的 `dark-canvas` 文件夹。Codex 的本机用户目录通常是 `~/.codex/skills/`；在 WSL 中它是该 Linux 用户的目录，Windows 用户目录需要另行选择。支持 SKILL.md 的其他 agent 可按其安装方式使用。图像生成工具由宿主环境提供，仓库不包含 API 密钥或模型服务。
-
-示例请求：
+从 [Releases](https://github.com/yunmin311/dark-canvas-image-skill/releases) 下载 ZIP，把其中 `dark-canvas` 文件夹复制到支持 SKILL.md 的 agent 技能目录。Codex 通常使用 `~/.codex/skills/`，以当前执行环境为准。图像生成工具由宿主提供，项目不包含密钥或模型服务。
 
 ```text
-用 $dark-canvas 生成一张灰绿阴云与岸边树影的横幅，主体很小，不要文字。
+用 $dark-canvas 生成冷蓝雨夜街道，建筑和一个撑伞人可读，使用细平印相纹理；不要套成湖景。
 ```
 
 ```text
-用 $dark-canvas 把这张照片转成暖灰织物印相质感，保持人物、建筑、物件位置和原裁切。
+用 $dark-canvas 生成方形室内静物，一只砖红杯、一只碟、一把勺，暖灰环境里保留杯子的局部红色。
 ```
 
-查看 [skill 入口](skills/dark-canvas/SKILL.md)、[视觉配方](skills/dark-canvas/references/visual-recipe.md)、[提示词模板](skills/dark-canvas/references/prompts.md) 和 [实测记录](examples/validation.md)。下载项目后可直接用浏览器打开 `preview.html` 看原图/转换切换对照。复制技能文件夹后，技能核心及风格参考图可独立使用。
+```text
+用 $dark-canvas 转换这张湖面照片，借用参考的冷蓝色彩与细纹，保留柳枝、岸线、灯光和原裁切；检查后修正偏差并交付图片。
+```
 
-## 来源与图片
+最终目标是有诗意：通过含蓄的光、层次、节奏、空间与情绪关系实现，不能只给普通照片叠纹理。主体仍须可读，审美判断须基于实际成图。
 
-风格分析以用户补发的六张清晰参考、此前六格截图，以及其已认可的两张 Creative OS AI 生成图片为基础。用户的摄影参考截图只保存在本地，未包含在公开仓库。摄影师身份的检索证据和限制见 [来源记录](SOURCES.md)。
+## 对最终输出负责
 
-文字与 skill 配置采用 MIT 许可证；仓库 AI 生成示例的来源单独列于 [图片说明](ASSETS.md)，不把第三方摄影作品纳入许可证。
+- 先记录主题、必须保留的内容、风格轴、允许改变的范围及交付条件。
+- 每张成图实际查看；物件数量、主体与结构、色彩、表面和清晰度分别检查。
+- 关键项失败时进行有针对性的修正，默认最多两次；每版复查，按结果选择最佳版。
+- 仍失败就交付最佳文件及未达标项，标为部分达成或未达成，不能用“工具调用成功”代替验收。
+
+查看 [skill](skills/dark-canvas/SKILL.md)、[配方](skills/dark-canvas/references/visual-recipe.md)、[模板](skills/dark-canvas/references/prompts.md)、[成品检查](skills/dark-canvas/references/acceptance.md) 和 [当前实测](examples/validation.md)。本地打开 `preview.html` 可看公开样本；用户原照片的对照仅在本地保存。
+
+## 证据与限制
+
+测试是本执行环境手动按 skill 进行的真实图像工具调用，不是跨模型的独立 agent 行为验证。不同主题测试不能证明任意主题、真实人物身份或精确文字都能保真，也不承诺与摄影参考像素一致。修正失败须如实记录。
+
+摄影参考由用户指认为 Pablo Bueno 的作品；提供的小红书主页尚未成功读取昵称和作品列表，账号身份未独立核实。[来源记录](SOURCES.md) 保留证据边界。第三方摄影作品与用户原照片没有纳入公开仓库。AI 生成样本来源见 [图片说明](ASSETS.md)，文字与配置采用 MIT 许可证。

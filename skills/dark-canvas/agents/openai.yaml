@@ -1,4 +1,4 @@
 interface:
   display_name: "暗幕影像"
-  short_description: "Adapt style by subject, inspect and correct final images"
-  default_prompt: "用 $dark-canvas 根据主题和参考选择视觉处理，生成并检查最终图片，修正偏差后交付。"
+  short_description: "Create poetic images; adapt, inspect and correct output"
+  default_prompt: "用 $dark-canvas 根据主题和参考实现诗意的视觉处理，生成并检查最终图片，修正偏差后交付。"
