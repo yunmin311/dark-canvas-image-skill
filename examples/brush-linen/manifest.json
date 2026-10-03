@@ -1,0 +1,41 @@
+{
+  "version": "v0.5.0",
+  "tool": "Codex built-in image_gen",
+  "date": "2026-10-03",
+  "status": "partial; visual approval pending",
+  "method": "manual tool execution, output inspection; no raster post-processing",
+  "files": [
+    {
+      "file": "lake-v1.png",
+      "scope": "private",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 2695585,
+      "sha256": "e848a5f00c33d27d61ed9a72aef41c1b1ce9e3390662f330ddd82744326a580d"
+    },
+    {
+      "file": "stilllife-v1.png",
+      "scope": "public AI sample",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 3244830,
+      "sha256": "cd1148a1061594b1fcba8d9abfe02f3a83edcbe5aba6e4925147b171675c22cc"
+    },
+    {
+      "file": "stilllife-v2.png",
+      "scope": "public AI sample",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 2829424,
+      "sha256": "ffe322b562e6676c98d98c6dbf80757ef7e67093d0f4f9d3509baf86df50484a"
+    },
+    {
+      "file": "stilllife-v3.png",
+      "scope": "public AI sample",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 3122907,
+      "sha256": "4772b06f033897d867eab002df2d5bad9a890e427909c0266cef2b7440e4db15"
+    }
+  ]
+}

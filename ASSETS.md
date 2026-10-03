@@ -1,6 +1,6 @@
 # 图片来源与范围
 
-全部图片均为 AI 生成的校准样本，**不是摄影师 Pablo Bueno 的摄影作品**。
+除下方另列的 CC0 亚麻材质外，场景图片均为 AI 生成样本，**不是摄影师 Pablo Bueno 的摄影作品**。
 
 | 文件 | 来源 | 用途 |
 | --- | --- | --- |
@@ -21,7 +21,7 @@
 
 ## 权利说明
 
-MIT 许可证适用于本仓库的原创文字与配置。**不表示第三方摄影作品被重新许可。** 仓库图片是 AI 生成样本，不是第三方摄影原图的复制或裁切。部分历史样本与参考的构图相近，不作为新构图能力的证明。
+MIT 许可证适用于本仓库的原创文字与配置。**不表示第三方摄影作品被重新许可。** 场景示例是 AI 生成样本，不是用户摄影原图的复制或裁切；材质素材为有独立 CC0 许可的资源。部分历史样本与参考的构图相近，不作为新构图能力的证明。
 
 用户提供的摄影参考保存在被 Git 忽略的本地目录，**不随仓库与发布包分发**。小红书分享链接的临时参数（`xsec_token`、`shareRedId` 等）已全部剔除，只保留稳定主页地址。原始 Creative OS 文件未被改动。
 
@@ -36,3 +36,9 @@ MIT 许可证适用于本仓库的原创文字与配置。**不表示第三方�
 ## v0.4.1 平静布面候选
 
 2026-10-03 Codex 内建 image_gen 编辑现有 AI 生成场景：`examples/flat-canvas/street-v1.png`、`street-v2.png`、`stilllife-v1.png`、`stilllife-v2.png`、`stilllife-v3.png`。均为原始 PNG，未作后期纹理处理；摄影参考只借平缓布面语言，未纳入仓库。真实湖面及三版转换只保存在本地。当前候选的装饰性细纹仍有偏差，标为部分达成，用户尚未视觉认可。
+
+## v0.5.0 新增材质（CC0）
+
+本轮新增 `examples/brush-linen/stilllife-v1.png`、`stilllife-v2.png`、`stilllife-v3.png`，为内建 image_gen 编辑已有 AI 静物的原始输出，未作后期处理。第三版减少高光/塑形，保留砖红/米白/暖棕和基本物件安排，选为部分达成候选；各版可在公开对照页查看。真实湖面的一次新转换仅本地保存。当前测试是作者实际调用/看图，未获用户审美认可；不能据此宣称完全复制摄影师风格。
+
+`skills/dark-canvas/assets/materials/rough-linen-ao-1k.jpg` 与 `rough-linen-disp-1k.jpg` 来自 [Poly Haven Rough Linen](https://polyhaven.com/a/rough_linen)，摄影 colormass、处理 Rico Cilliers。[官方许可](https://polyhaven.com/license)为 CC0，原下载文件未做编辑。灰度图只作为纤维形态依据；不是摄影师同款织物或已上底油画布的证明。源链接、字节数、SHA256 和日期见同目录的 provenance.json，使用方式见 NOTICE.md。材质 CC0 与项目文字 MIT 分开。

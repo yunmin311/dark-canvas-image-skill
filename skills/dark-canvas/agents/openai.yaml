@@ -1,4 +1,4 @@
 interface:
   display_name: "暗幕影像"
-  short_description: "Quiet flat canvas poetry; adapt and inspect final images"
-  default_prompt: "用 $dark-canvas 按主题与参考生成平、静、色面融合的诗意画布图片，生成并检查最终图片，修正偏差后交付。"
+  short_description: "Preserve colors; Chinese brush feeling on real linen"
+  default_prompt: "用 $dark-canvas 保持原图配色，以毛笔笔意、统一色面与真实布纹生成诗意图片，生成并检查最终图片，修正偏差后交付。"

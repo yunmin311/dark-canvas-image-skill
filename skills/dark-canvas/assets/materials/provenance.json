@@ -1,0 +1,26 @@
+{
+  "asset": "Rough Linen",
+  "source": "https://polyhaven.com/a/rough_linen",
+  "license": "CC0",
+  "license_page": "https://polyhaven.com/license",
+  "authors": {
+    "photography": "colormass",
+    "processing": "Rico Cilliers"
+  },
+  "retrieved": "2026-10-03",
+  "purpose": "weave morphology only, not source palette or claim of primed painting canvas",
+  "files": [
+    {
+      "file": "rough-linen-ao-1k.jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/rough_linen/rough_linen_ao_1k.jpg",
+      "bytes": 1053808,
+      "sha256": "05076a86deb0d7e60e722f746339a2598c3449e4fc013ac4ad63edebf1f16420"
+    },
+    {
+      "file": "rough-linen-disp-1k.jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/rough_linen/rough_linen_disp_1k.jpg",
+      "bytes": 882066,
+      "sha256": "38b1cd43b45e5ef0c09df779787ef18a6bcf3c7665f78c7d698d755f5305ac65"
+    }
+  ]
+}

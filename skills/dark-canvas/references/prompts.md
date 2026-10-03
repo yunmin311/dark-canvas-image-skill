@@ -1,39 +1,28 @@
-# 为本次目标组装提示词
+# 简短提示词与输入分工
 
-模板的方括号必须按实际看图替换；不适用的条目删除。它们是生成结构，不是已通过所有主题的固定成品配方。工具参数以当前接口为准。
+看过实际图片后填写；新图与编辑分开，不拼入互相冲突的风格名。素材与输入路径使用真实接口，不虚构强度或配色参数。
+
+## 编辑
+
+```text
+Edit image 1. Keep its [main colors, warm/cool relationships, color proportions], [subject/counts], [crop and main arrangement]. Only modest tonal unification within the existing palette is allowed.
+Image 2 supplies Chinese brush-painting-like economy and unified background fields, not its colors or subjects. Image 3 supplies real linen warp/weft structure, not its grayscale color or contrast.
+Render the existing subject as economical ink-brush-like pigment shapes with restrained tapered/dry-brush handling on primed oil canvas. Unify quiet background color fields within their original color families. Suppress camera sharpness, glossy modeling and fussy microdetail. Fine low-contrast weave integrated with pigment.
+No watercolor blooms/paper staining, ornamental curls, coarse cloth, added motifs or text. Keep [explicit exact-content requirements, if any]. Deliver one finished image.
+```
 
 ## 新图
 
 ```text
-Create one original [requested aspect ratio / format] image for [purpose].
-Subject and scene: [specific requested content and object/person counts].
-Composition: [appropriate framing for this subject; honor the requested crop and focal content].
-Input references: image 1 = [palette and contrast only]; image 2 = [surface / edge treatment only, if needed]. Borrow these visual properties, not their subjects, scene geometry or object placement.
-Visual treatment: a quiet flat painting on fine canvas with [continuous delicate linen weave and thin matte pigment / another user-selected treatment]. [soft integrated edges and simplified pigment shapes; only retain explicitly needed recognition cues]. Mood and lighting: [selected from the request and current references].
-Poetic intent: [one subject-specific emotional relationship]. Express it through [tonal unity, quiet color fields, lost edges and restrained detail]. Avoid competing spectacle; keep requested subjects/counts intact. Strong depth, clear layers and photographic sharpness are not quality goals. The subject itself must participate in painterly abstraction.
-Palette: [target temperature, dominant color relationships and any important local color]. Surface scale and intensity: [observed reference level]. Keep main subject arrangement; allow fine details, material rendering and reflections to dissolve into quiet thin pigment. Delicate brush handling is allowed; avoid thick impasto or coarse weave.
-Must include/retain: [critical content]. Do not add: [reference-only motifs irrelevant to the task].
-Avoid: [only relevant failure risks, such as all-over sepia, coarse burlap, ornamental etched texture, or loss of explicitly requested subject features]. No unrequested text, decorative frame, signature or collage.
-```
-
-## 照片转换
-
-```text
-Edit image 1, the source. Other images are style references only.
-Keep image 1's [actual aspect ratio], crop, camera position, main scene arrangement. Preserve [actually observed people, objects, counts, main shapes and positions; only preserve fine details when explicitly required].
-Change [authorized rendering/palette/surface/softness]. Palette target: [chosen reference or explicit request; do not force warm or gray onto every scene]. Surface target: [observed scale and flatness]. Compress strong spatial/tonal separation; soften and simplify foreground as well as background into integrated pigment shapes. Keep only [explicit task-critical recognition cues].
-Do not insert [objects appearing only in the references]. Do not delete content or alter framing to create negative space. Preserve [sky/cloud layout, reflections, lettering or identity, if required], and avoid [observed likely drift].
-Poetic intent: [a relationship already present in the source, such as suspended willow lines and still water]. Express it through a unified calm picture plane, subdued tones and thin paint in fine linen weave. Do not strengthen perspective, layers or sharpness as default improvements.
-The same source scene must remain recognizable. Allow painterly detail abstraction. No extra motifs, uniform out-of-focus blur, dramatic depth, thick impasto, coarse burlap, borders, text or signature.
+Create one [format] image of [requested subject/counts and arrangement]. Palette: [user-selected or explicitly chosen reference colors].
+Quiet unified background fields, economical Chinese brush-painting-like pigment shapes and restrained brush ends on primed oil canvas. Fine actual linen structure is a material reference only; no borrowing its gray/white color.
+Avoid photographic microdetail, watercolor/paper effects, ornamental etched texture and added motifs. Deliver the completed image.
 ```
 
 ## 定向修正
 
 ```text
-[Edit the best prior result OR regenerate from the original source and references, whichever preserves content better].
-Observed failure: [concrete visible mismatch]. Correct only [targeted property].
-Keep [successful content, framing and treatment]. Invariants: [list critical retained facts again].
-Use [specific reference] for [specific property]. Do not repeat [observed failure].
+Observed mismatch: [what is actually wrong]. Restore/correct [one property] using [source/reference role]. Keep [already correct colors, content and format]. Do not carry forward [the failed version's specific distortion].
 ```
 
-工具强制标识只能根据本次输出和宿主说明记录；提示词不能保证删除、关闭或一定出现某个水印。所有最终提示词、参考角色、修正和实际输出需进入任务记录。
+记录完整实际提示词、每张输入的角色、各版路径及逐项观察。水印、身份、色彩与材质是否成功，只能依据实际文件检查，不能由提示词保证。
