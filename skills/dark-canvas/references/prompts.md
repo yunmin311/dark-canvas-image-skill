@@ -1,29 +1,37 @@
-# 可执行提示词
+# 为本次目标组装提示词
 
-将方括号替换为本次要求。删除不适用的语句；不要把所有变体塞进一次调用。固定提示词不保证固定结果。
+模板的方括号必须按实际看图替换；不适用的条目删除。它们是生成结构，不是已通过所有主题的固定成品配方。工具参数以当前接口为准。
 
-## 从零生成
-
-```text
-Create one original [aspect ratio] fine-art photographic image of [requested subject and scene].
-Style references: image 1 = surface and tonal reference; image 2 = silhouette/negative-space reference. Use their visual language, not their exact scenes.
-Composition: [user composition; otherwise asymmetric framing, broad quiet sky or mist, peripheral natural silhouettes, one small focal anchor only when suitable].
-Photographic space and believable organic shapes, with fine flat photographic print texture: tiny softly visible crosshatched fibers or dot-like marks continuous through light and dark areas, matte, no raised threads. [For the Creative OS variant only: a more visible fine linen weave]. Not coarse burlap or oil-paint brushwork.
-Palette: [default neutral monochrome smoke-gray with a trace of warm gray; otherwise muted olive / warm parchment OR restrained ochre / brown-black]. Truly dark silhouette masses, layered gray midtones, softly diffuse lighter sky; subdued saturation, atmospheric depth. Selectively readable edges with softly fading distance. No central golden sunburst or epic cinematic landscape unless requested.
-Optional variant: [local directional motion blur OR a restrained edge light leak; omit by default].
-No text, watermark, signature, decorative border or collage. Avoid vivid blue skies, orange-teal grading, HDR crispness, thick paint, pixel grids and uniform blur.
-```
-
-## 将照片转换为暗幕质感
+## 新图
 
 ```text
-Edit image 1, the source photograph. Images 2 and 3 are style references only.
-Preserve the source's aspect ratio, crop, perspective, horizon, subject identities, object count and major positions. Specifically preserve [list actual landmarks/people/objects after viewing the source]. Do not borrow or insert objects from the style references.
-Transform tonal rendering and print surface to match the reference: low-saturation [default neutral smoke-gray; otherwise chosen palette], deep but differentiated charcoal shadows, layered smoky midtones and soft gray highlights. Add fine flat softly visible crosshatched fiber/dot-like print texture continuously across the photographic image. [Only for the Creative OS variant: fine linen warp/weft texture, as though the print has soaked into a matte fabric surface]. Keep texture small and subtle, never coarse burlap or a digital grid. Do not add a golden central spotlight or reshape clouds dramatically.
-Maintain photographic structure and recognisable important edges. Soften only [source-appropriate background areas]; keep [faces, buildings, foreground landmarks] readable. [Motion/edge leak only if explicitly selected].
-Change the photographic rendering and surface; retain the scene. No new text, objects, signature, watermark, decorative border or collage. Avoid oil-paint brushwork, uniform sepia, crushed full-frame blacks, oversaturation and global blur.
+Create one original [requested aspect ratio / format] image for [purpose].
+Subject and scene: [specific requested content and object/person counts].
+Composition: [appropriate framing for this subject; honor the requested crop and focal content].
+Input references: image 1 = [palette and contrast only]; image 2 = [surface / edge treatment only, if needed]. Borrow these visual properties, not their subjects, scene geometry or object placement.
+Visual treatment: photographic structure with [fine flat printed crosshatch / visible restrained textile weave / other selected surface]. [Specify edge treatment: which contours stay readable and which regions can soften]. Mood and lighting: [selected from the request and current references].
+Palette: [target temperature, dominant color relationships and any important local color]. Surface scale and intensity: [observed reference level]. Keep photographic forms; [only add visible oil brushwork if specifically required].
+Must include/retain: [critical content]. Do not add: [reference-only motifs irrelevant to the task].
+Avoid: [only relevant failure risks, such as all-over sepia, coarse burlap, unwanted brush swirls, or illegible face/product detail]. No unrequested text, decorative frame, signature or collage.
 ```
 
-## 交付记录
+## 照片转换
 
-写出：最终提示词、每张输入的角色、生成/编辑工具、输出路径、对照参考的可见偏差。隐私路径可以保留在本地记录；公开记录使用仓库相对路径，不放分享令牌或个人文件夹地址。
+```text
+Edit image 1, the source. Other images are style references only.
+Keep image 1's [actual aspect ratio], crop, camera position, perspective and scene geometry. Preserve [actually observed people, objects, counts, distinctive shapes, positions and important details].
+Change [authorized rendering/palette/surface/softness]. Palette target: [chosen reference or explicit request; do not force warm or gray onto every scene]. Surface target: [observed scale and flatness]. Important readable edges: [faces/branches/objects/architecture]. Areas that may soften: [source-specific background].
+Do not insert [objects appearing only in the references]. Do not delete content or alter framing to create negative space. Preserve [sky/cloud layout, reflections, lettering or identity, if required], and avoid [observed likely drift].
+The same source scene must remain recognizable. No unrequested painterly brushwork, global blur, borders, text or signature.
+```
+
+## 定向修正
+
+```text
+[Edit the best prior result OR regenerate from the original source and references, whichever preserves content better].
+Observed failure: [concrete visible mismatch]. Correct only [targeted property].
+Keep [successful content, framing and treatment]. Invariants: [list critical retained facts again].
+Use [specific reference] for [specific property]. Do not repeat [observed failure].
+```
+
+工具强制标识只能根据本次输出和宿主说明记录；提示词不能保证删除、关闭或一定出现某个水印。所有最终提示词、参考角色、修正和实际输出需进入任务记录。
