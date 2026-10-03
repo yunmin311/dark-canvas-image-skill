@@ -32,3 +32,7 @@ MIT 许可证适用于本仓库的原创文字与配置。**不表示第三方�
 历史 JPEG 为原始 PNG 的压缩版本，画面未因本次文档修订而更改。新增样本为 2026-10-03 Codex 内建 image_gen 实际输出：`examples/adaptive/street-v1/v2.png`（街道两版）、`stilllife-v1/v2/v3.png`（静物三版）、`portrait-v1/v2.png`（AI 虚构人物两版）。命名中的斜线表示各独立文件的版本，原始 PNG 未修改。湖面真实照片及两版转换均仅本地保存；公开记录不分发这些图片。
 
 新增样本是候选成果，用户尚未作视觉验收；特别是人物诗意表达仍只部分达成。
+
+## v0.4.1 平静布面候选
+
+2026-10-03 Codex 内建 image_gen 编辑现有 AI 生成场景：`examples/flat-canvas/street-v1.png`、`street-v2.png`、`stilllife-v1.png`、`stilllife-v2.png`、`stilllife-v3.png`。均为原始 PNG，未作后期纹理处理；摄影参考只借平缓布面语言，未纳入仓库。真实湖面及三版转换只保存在本地。当前候选的装饰性细纹仍有偏差，标为部分达成，用户尚未视觉认可。
