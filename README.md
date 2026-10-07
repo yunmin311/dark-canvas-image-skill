@@ -6,6 +6,24 @@
 
 [中文](#中文) · [English](#english)
 
+## 效果预览 · Selected results
+
+以下均为用户已认可的 AI 成图：前两张是早期 Creative OS 案例，后两张是当前技能的真实照片图生图结果。展示选定版本，保留完整画幅。
+
+User-approved AI outputs: two earlier Creative OS examples, followed by two real-photo edits using the current skill. Full frames are shown.
+
+| 海岸 · Coast | 植物 · Botanical |
+| --- | --- |
+| ![海岸：连续色面与细画布 / Coast with continuous tones and fine canvas](skills/dark-canvas/assets/accepted-landscape.jpg) | ![植物：薄枝影与暖色布面 / Botanical silhouettes on warm canvas](skills/dark-canvas/assets/accepted-botanical.jpg) |
+| Creative OS · 已认可 AI 成图 / Approved AI example | Creative OS · 已认可 AI 成图 / Approved AI example |
+
+| 秋叶 · Autumn leaves | 玉兰 · Magnolia |
+| --- | --- |
+| ![秋叶：保留原透光暖色，次叶与背景相融 / Warm leaves blending into the ground](docs/showcase/autumn-leaves.png) | ![玉兰：亮底大主体，部分瓣边与底色相融 / Magnolia with selectively softened petal edges](docs/showcase/magnolia.png) |
+| 图生图中间稿 v2 / Selected intermediate edit v2 | 图生图第二稿 v2 / Selected edit v2 |
+
+原片摄影 / Source photography: [Annie Spratt — 秋叶 / leaves](https://unsplash.com/photos/red-maple-leaves-in-close-up-photography-fNga_VEZmC8) · [Bernd Dittrich — 玉兰 / magnolia](https://unsplash.com/photos/delicate-pink-magnolia-blossoms-on-a-branch-z5x3ss6Uw24)。[展示图来源与许可 / Provenance and licensing](docs/showcase/NOTICE.md)
+
 ## 中文
 
 ### 项目定位
@@ -51,7 +69,7 @@ Dark Canvas 是供图像生成 agent 使用的图生图技能，主要面向风�
 | [成品验收](skills/dark-canvas/references/acceptance.md) | 光色、主体、布面与交付检查 |
 | [素材说明](ASSETS.md) · [来源记录](SOURCES.md) | 图片性质、来源与归属依据 |
 
-参考研究包含 24 张用户提供的作品观察，其中一张已排除、23 张参与目标研究。原作品、测试原片及新生成测试结果仅保留本地，不随公开仓库或技能包分发。包内 Creative OS 案例为 AI 成图，素材目录中的真实亚麻与生成做旧示意分别标注来源。
+参考研究包含 24 张用户提供的作品观察，其中一张已排除、23 张参与目标研究。原作品、测试原片及未选入展示的测试结果仅保留本地；本页两张精选图生图结果经用户要求公开展示，不加入技能安装包。包内 Creative OS 案例为 AI 成图，素材目录中的真实亚麻与生成做旧示意分别标注来源。
 
 ### 许可与归属
 
@@ -104,7 +122,7 @@ Approval applies to individual inputs and selected versions. It does not establi
 | [Acceptance criteria](skills/dark-canvas/references/acceptance.md) | Visual and delivery checks |
 | [Asset notes](ASSETS.md) · [Sources](SOURCES.md) | Provenance and attribution |
 
-The reference study covers 24 user-supplied works; one is excluded and 23 inform the target study. Original works, test photographs, and newly generated test results remain local and are excluded from the public repository and packages. The included Creative OS examples are AI-generated. Actual linen textures and generated wear guides have separate provenance records.
+The reference study covers 24 user-supplied works; one is excluded and 23 inform the target study. Original works, test photographs, and test results outside the selected showcase remain local. At the user’s request, two selected image-to-image outputs are published here as README examples, outside the installable skill package. The included Creative OS examples are AI-generated. Actual linen textures and generated wear guides have separate provenance records.
 
 ### License and attribution
 

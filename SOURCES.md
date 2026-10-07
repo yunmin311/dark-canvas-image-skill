@@ -50,3 +50,10 @@
 用户认可现有材质方向，但要求区分做旧残破布面、晕影、毛笔般用笔与剪纸般色形，保留各张作品自己的风格后统一气质；否定合成跨主题测试，并指出现版未能复刻目标。已重新逐张看二十四份附件（含相近构图）及两张已认可 Creative OS 成图。黑白枯枝月、青色弯月鸟、田野农人、橙云群鸟与黑白阴云尤其可见旧斑、磨损、擦痕、露底或颜料缺口。主体表达、基底与边缘关系已分开选择，不把每张都强制画笔化，也不从视觉旧痕推断真实材料/工艺。
 
 真实亚麻保持原样，新增两张由内建 image_gen 编辑得到的做旧示意，分别记录来源；不是找到摄影师原素材。当前候选只用用户真实照片图生图验证，不再制造杯/街道/人像场景。旧跨主题结果已从当前项目移除，旧“部分达成”不能覆盖用户的未通过结论。
+
+
+## 2026-10-07 README 展示图
+
+按用户要求，公开展示四张已认可的 AI 成图。Creative OS 海岸和植物沿用原有资源；新增秋叶中间稿 v2 和玉兰第二稿 v2，均为本项目图生图结果。原照片分别来自 [Annie Spratt](https://unsplash.com/photos/red-maple-leaves-in-close-up-photography-fNga_VEZmC8) 与 [Bernd Dittrich](https://unsplash.com/photos/delicate-pink-magnolia-blossoms-on-a-branch-z5x3ss6Uw24)。两张来源页及 [Unsplash License](https://unsplash.com/license) 已于当日核对；该许可允许修改与分发。生成结果不是 Pablo Bueno 的摄影作品，也不分发其目标参考图。
+
+详见 [展示图说明与文件校验](docs/showcase/NOTICE.md)。两个公开 PNG 是实际选定输出的逐字节副本，没有擦除水印、裁切或调色。其余真实原片、参考作品与测试结果继续保留本地。

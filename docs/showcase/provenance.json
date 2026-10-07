@@ -1,0 +1,35 @@
+{
+  "published_on": "2026-10-07",
+  "images": [
+    {
+      "file": "autumn-leaves.png",
+      "kind": "AI-edited result; not photographer artwork",
+      "tool": "Codex built-in image_gen",
+      "selected_version": "v2",
+      "user_accepted": true,
+      "source_photographer": "Annie Spratt",
+      "source_page": "https://unsplash.com/photos/red-maple-leaves-in-close-up-photography-fNga_VEZmC8",
+      "source_license": "https://unsplash.com/license",
+      "original_output_sha256": "37d3e5dadc84ad14b1a4e0c11beef4d53212a5644f6298ad92471e0d51b0d035",
+      "published_sha256": "37d3e5dadc84ad14b1a4e0c11beef4d53212a5644f6298ad92471e0d51b0d035",
+      "post_processing": "none; byte-for-byte copy",
+      "publication_authority": "User requested selected best images in public README on 2026-10-07",
+      "visible_watermark_check": "manually viewed; no visible corner watermark"
+    },
+    {
+      "file": "magnolia.png",
+      "kind": "AI-edited result; not photographer artwork",
+      "tool": "Codex built-in image_gen",
+      "selected_version": "v2",
+      "user_accepted": true,
+      "source_photographer": "Bernd Dittrich",
+      "source_page": "https://unsplash.com/photos/delicate-pink-magnolia-blossoms-on-a-branch-z5x3ss6Uw24",
+      "source_license": "https://unsplash.com/license",
+      "original_output_sha256": "24ea21eabbc66cee491b46753553afc98a2e04ec82e5f19565db05f1aabe2923",
+      "published_sha256": "24ea21eabbc66cee491b46753553afc98a2e04ec82e5f19565db05f1aabe2923",
+      "post_processing": "none; byte-for-byte copy",
+      "publication_authority": "User requested selected best images in public README on 2026-10-07",
+      "visible_watermark_check": "manually viewed; no visible corner watermark"
+    }
+  ]
+}

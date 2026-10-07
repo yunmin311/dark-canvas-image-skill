@@ -1,5 +1,11 @@
 # Changelog · 更新记录
 
+## Unreleased — 2026-10-07
+
+- README 新增四张已认可成果：Creative OS 海岸与植物、图生图秋叶中间稿 v2 与玉兰第二稿 v2；补充原片作者、许可和文件校验。
+- 十二张旧图片移出当前公开文件，原样保留在本地归档；历史提交与旧 release 不改写。当前 v0.7.0 安装包原已排除这些历史图，技能内容与安装包保持不变。
+- Add four approved README results with attribution and provenance. Archive twelve legacy images locally; preserve Git history and old releases. The v0.7.0 package already excludes legacy images and is unchanged.
+
 ## v0.7.0 — 2026-10-07
 
 ### 中文
