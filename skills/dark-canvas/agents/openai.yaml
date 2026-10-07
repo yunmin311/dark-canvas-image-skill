@@ -1,4 +1,4 @@
 interface:
   display_name: "暗幕影像"
-  short_description: "Edit photos with poetic forms and selected canvas surfaces"
-  default_prompt: "用 $dark-canvas 以图生图保留原色，按作品选择毛笔、剪影或雾化，再选布面、做旧与晕影，统一诗意并看图修正后交付。"
+  short_description: "Poetic photo edits with fine woven-canvas surfaces"
+  default_prompt: "用 $dark-canvas 先看原片和实际参考，判断主体、光色与视觉复杂度。保住原曝光、光向、主色和构图，优先使用共同的细经纬画布；按题材取舍次要细节，选择必要的局部柔化或拖影，再对照原片看图核验。"

@@ -11,6 +11,8 @@
 
 做旧程度分别选择：干净 / 轻微 / 明显。生成片里露出的纤维仍较多，不能把成图变成裸麻布。选了旧痕时保留有意的磨损，不把它全部去噪；没选旧痕就不加脏斑。不要用破洞、烧边、裂纹网、石膏剥落或复古画框解释每张图的残破感。晕影是另一项边缘处理，不是这些布料本身必须携带的黑框。
 
+优先原作共同布面。这些素材只在需要额外校准时辅助，不作为覆盖原曝光和色彩的默认底图；先读 [画布与光色](../../references/canvas-and-light.md)。
+
 ## 原始亚麻来源
 
 [Poly Haven Rough Linen](https://polyhaven.com/a/rough_linen)，摄影 colormass，处理 Rico Cilliers。[官方 CC0 许可](https://polyhaven.com/license)；素材保留 CC0，不改成项目文字的 MIT 许可。下载 URL、字节数、SHA256 与日期见 [provenance.json](provenance.json)。这是亚麻织纹资源，不证明与摄影师底布同款或是已上底油画布实拍。

@@ -1,3 +1,5 @@
+> 历史 v0.6.0 记录，保留供追溯；当前逐图状态见 [验收记录](../skills/dark-canvas/references/validation-status.md)。
+
 # v0.6.0 真实照片的实际图生图请求
 
 一张用户真实柳岸照片，共三次实际编辑；没有合成跨主题场景。内建 image_gen，transparent_background=false，照片及结果仅本地保存。下面是完整实际 prompt；输入用真实 referenced_image_paths 传入，公开记录仅描述角色，不公开照片或个人绝对路径。

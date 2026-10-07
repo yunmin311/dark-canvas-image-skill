@@ -1,0 +1,183 @@
+{
+  "reviewed_on": "2026-10-07",
+  "primary_groups_disjoint": true,
+  "groups": [
+    {
+      "id": "branches",
+      "title": "静态枝叶：细线与薄色形",
+      "choose_when": "枝、叶、鸟或近物是主角，存在可组织的空隙；主体多不等于必须拖影。",
+      "handling": "保主要轮廓、粗细和疏密，内部体积光收敛；有需要的细枝可留。",
+      "background": "连续慢变底色，远景退后；输入有绿可以留有限绿。",
+      "surface": "以所选作品的细布/弱旧斑为准，不自动上强磨损。",
+      "edge": "自然植物框景与额外晕影分开。",
+      "test_trigger": "细枝不变粗描边，绿不被默认去掉，布面与薄色形统一。",
+      "members": [
+        "R01",
+        "R06",
+        "R13",
+        "R14",
+        "R17",
+        "R23",
+        "R24"
+      ],
+      "representatives": [
+        "R24",
+        "R14",
+        "R06"
+      ],
+      "status": "visual observation and adaptation guidance; approval is per input and selected version",
+      "historical_test_observation": "此前公园两版已被用户整体否定：曝光、密叶碎笔与表面未达标。",
+      "validation_note": "Historical observation retained; see validation-status.md for current user acceptance. No group-wide success claim."
+    },
+    {
+      "id": "layered",
+      "title": "树冠与远山：近实远简",
+      "choose_when": "近树/柳与远山、岸、水面共存，主体关系已有横带。",
+      "handling": "近冠可保自然线形，远山合成薄色带，少数小识别点可留。",
+      "background": "保原片的山水相接与明度带，不人为强化空间。",
+      "surface": "默认共同经纬画布；灰湖的颗粒表面只是低优先级例外，不能因为输入为湖景就替换默认布面。",
+      "edge": "优先自然框景，宽缓边暗只在作品有依据时用。",
+      "test_trigger": "近远软硬有差，原水面/岸线不消失，不新增鸟或月。",
+      "members": [
+        "R03",
+        "R09",
+        "R11"
+      ],
+      "representatives": [
+        "R09"
+      ],
+      "status": "visual observation and adaptation guidance; approval is per input and selected version",
+      "historical_test_observation": "此前柳岸两版已被用户整体否定：曝光、锐化与表面均未达标。",
+      "validation_note": "Historical observation retained; see validation-status.md for current user acceptance. No group-wide success claim."
+    },
+    {
+      "id": "mist",
+      "title": "雾山静水：柔色带与微小舟影",
+      "choose_when": "山水开阔、主体较远或原片已有柔化，水/天空可以连成大色面。",
+      "handling": "山内纹、舟细节和水面亮碎点可消失；保水平结构与小主体节奏。",
+      "background": "缓慢连续色面，软边不意味着水彩渗边或全图失焦。",
+      "surface": "细织布与干净/轻旧面，底色仍有慢变，不强制破败。",
+      "edge": "粉灰暮湖可以轻收，其他图按自身光色，不统一黑角。",
+      "test_trigger": "画面仍可辨为原山水，舟不凭空新增，柔化与细织布区分。",
+      "members": [
+        "R04",
+        "R05",
+        "R07",
+        "R10"
+      ],
+      "representatives": [
+        "R04",
+        "R05",
+        "R10"
+      ],
+      "status": "visual observation and adaptation guidance; approval is per input and selected version",
+      "historical_test_observation": "观察/适配已写，尚未独立实测。",
+      "validation_note": "Historical observation retained; see validation-status.md for current user acceptance. No group-wide success claim."
+    },
+    {
+      "id": "human",
+      "title": "乡间人文：姿态色形与选择性柔化",
+      "choose_when": "人物参与农事/舟行等简单自然背景；先判断源图活动与参考软硬。",
+      "handling": "以冷青渔舟为主要依据：保姿态、位置与衣服大色形，选择性柔化/淡重叠；不依据已排除的田野农人要求定形细节。",
+      "background": "景物为人提供关系，不能用新增树木取代复杂城市背景来冒充乡间。",
+      "surface": "默认共同经纬画布，干净到轻旧；人物色形柔化不带动布纹虚化。",
+      "edge": "不靠人物周围亮白雾或全图虚焦达成柔化。",
+      "test_trigger": "人物可辨动作，静态不被强糊，动态不保每条衣褶，经纬不一起模糊。",
+      "members": [
+        "R12"
+      ],
+      "representatives": [
+        "R12"
+      ],
+      "status": "visual observation and adaptation guidance; approval is per input and selected version",
+      "historical_test_observation": "田野农人已排除；渔舟处理方向继续保留，尚未在自然人文新源图验证。",
+      "validation_note": "Historical observation retained; see validation-status.md for current user acceptance. No group-wide success claim."
+    },
+    {
+      "id": "motion",
+      "title": "动态林影：方向拖曳与重叠",
+      "choose_when": "风中枝、林影、倒影等要表达流动/叠合，具有可保持的主方向。",
+      "handling": "保主枝/冠形支点，让次枝叶沿选定方向融合；不要每层副本都清楚。",
+      "background": "底色与影形轻重叠，不做整齐重复图案。",
+      "surface": "织纹稳定可辨，旧斑弱到中等；运动发生在色形而非布面。",
+      "edge": "橙林侧亮带仅为该作氛围；灰绿枝影不复制它。",
+      "test_trigger": "方向存在、局部锚点仍在、没有复制物件/模糊经纬。",
+      "members": [
+        "R08",
+        "R20",
+        "R22"
+      ],
+      "representatives": [
+        "R08",
+        "R22"
+      ],
+      "status": "visual observation and adaptation guidance; approval is per input and selected version",
+      "historical_test_observation": "观察/适配已写，尚未独立实测。",
+      "validation_note": "Historical observation retained; see validation-status.md for current user acceptance. No group-wide success claim."
+    },
+    {
+      "id": "minimal",
+      "title": "极简孤立形：大片布面与少量主体",
+      "choose_when": "原片已有枯枝/月/单鸟等少量可隔离形状，背景可以不竞争。",
+      "handling": "薄线、薄剪影和小亮形，主体内部不作浮雕塑形。",
+      "background": "大面积连续底色包含不均旧斑，不是光滑纯色或均匀颗粒。",
+      "surface": "枯枝月有显著浅缺口，青月鸟更多暗斑且浅点较少；按图选择。",
+      "edge": "宽缓收边可有，但不成为黑硬框。",
+      "test_trigger": "画面仍是原主体，不自动加入作者常见道具；旧痕疏密非均匀。",
+      "members": [
+        "R16",
+        "R18"
+      ],
+      "representatives": [
+        "R18",
+        "R16"
+      ],
+      "status": "visual observation and adaptation guidance; approval is per input and selected version",
+      "historical_test_observation": "观察/适配已写；已有作品微小编辑不算不同源片迁移验证。",
+      "validation_note": "Historical observation retained; see validation-status.md for current user acceptance. No group-wide success claim."
+    },
+    {
+      "id": "clouds",
+      "title": "云场与鸟/岸：软背景、定形点、局部旧边",
+      "choose_when": "云/天空占多数，少量鸟或低岸已有，适合由天色组织大面。",
+      "handling": "云保持大走势，鸟/低岸相对定形；橙鸟图有更强横向拖曳。",
+      "background": "用云场自身缓变，不逐云描亮边或雕体积。",
+      "surface": "黑白云有旧侧边/细擦痕，橙云浅磨点更多；不套统一破败滤镜。",
+      "edge": "云自身暗色、旧边、额外宽晕影分开。",
+      "test_trigger": "亮云仍有大面、鸟不变羽毛细描，不新增鸟，不用硬黑角遮图。",
+      "members": [
+        "R02",
+        "R19",
+        "R21"
+      ],
+      "representatives": [
+        "R19",
+        "R02",
+        "R21"
+      ],
+      "status": "visual observation and adaptation guidance; approval is per input and selected version",
+      "historical_test_observation": "观察/适配已写，尚未独立实测。",
+      "validation_note": "Historical observation retained; see validation-status.md for current user acceptance. No group-wide success claim."
+    }
+  ],
+  "default_surface": "woven_canvas",
+  "routing_order": [
+    "preserve_source_exposure_and_light",
+    "preferred_canvas",
+    "subject_and_local_effects",
+    "explicit_exception_if_canvas_unsuitable"
+  ],
+  "default_canvas_references": [
+    "R18",
+    "R06",
+    "R24"
+  ],
+  "excluded_references": [
+    "R15"
+  ],
+  "low_priority_exceptions": [
+    "R03"
+  ],
+  "target_reference_count": 23,
+  "validation_record": "validation-status.md"
+}

@@ -1,39 +1,111 @@
-# 暗幕影像 · Dark Canvas
+# Dark Canvas · 暗幕影像
 
-以**图生图**为主的诗意照片处理 skill。原照片负责内容、颜色和裁切；按当前作品选择摄影色形、毛笔笔意、剪纸般剪影或雾化拖影，再独立选择细布面/旧痕和晕影。共同目标是安静、统一色面、材质融合，而不是把每张都强制重画成毛笔插画。
+**Reference-guided image-to-image rendering with poetic forms and a woven-canvas surface.**
 
-**v0.6.0 是重新组织的候选配方，尚未证明已复刻目标风格。** 用户已否定此前合成跨主题测试，本版删除三批场景及旧对照/记录，以真实输入和两张用户认可的 Creative OS 案例为依据。
+**以实际视觉参考为依据，将照片转成具有诗意色形与经纬画布质感的影像。**
 
-## 使用
+[中文](#中文) · [English](#english)
 
-从 [Releases](https://github.com/yunmin311/dark-canvas-image-skill/releases) 下载 v0.6.0 候选 ZIP，把 `dark-canvas` 文件夹放入宿主的技能目录。Codex 通常为 `~/.codex/skills/`，以执行环境为准。图像工具由宿主提供，项目不含模型服务或密钥。新包只带两张已认可案例与当前素材，历史未认可的 AI 调色图不作为安装包校准资源。
+## 中文
+
+### 项目定位
+
+Dark Canvas 是供图像生成 agent 使用的图生图技能，主要面向风光、乡间景物与自然近物。它通过细节取舍、连续色面、选择性柔化和统一布面，形成接近中国山水画气息的平静表达。
+
+处理以原照片的光照、曝光、主要颜色、主体姿态和构图为依据。画布质感贯穿主体与背景；干净布面、轻度做旧、局部磨损以及柔化程度根据具体参考选择。暗底、低地平线和黑色剪影均不是固定要求。
+
+本项目提供技能指令、视觉观察、编辑请求模板和验收方法。图像编辑由宿主工具执行，项目本身不包含模型服务。
+
+### 使用方式
+
+1. 从 [Releases](https://github.com/yunmin311/dark-canvas-image-skill/releases) 下载技能包，将其中的 `dark-canvas` 文件夹放入宿主技能目录；Codex 通常使用 `~/.codex/skills/`。也可使用仓库中的 `skills/dark-canvas/` 文件夹。
+2. 向 agent 提供原照片及目标视觉参考。公开包不包含用户提供的摄影作品，可使用本次附图或包内两张已认可的 Creative OS AI 案例。
+3. 调用 `$dark-canvas`，说明需要保留的主体、构图与颜色，以及希望取舍的次要细节。
+4. 对照原片评估结果，再针对主要偏差修正。选定版本以实际视觉验收为准。
 
 ```text
-用 $dark-canvas 转换这张照片，保持主色关系和原裁切，参考这张竹叶作品的利落色形与统一背景；保留自然枝叶，不额外做旧或加晕影。
+用 $dark-canvas 处理这张照片，参考附图的薄色形与细画布关系。
+保持原光照、主色和构图，保留主体姿态；合并次要细节，
+让部分色形与背景相融，旧痕和柔化程度按参考选择。
 ```
+
+当前发布版：[v0.7.0](https://github.com/yunmin311/dark-canvas-image-skill/releases/tag/v0.7.0)。版本变化见 [CHANGELOG](CHANGELOG.md)；安装包是对应版本的快照。
+
+### 验证范围
+
+真实照片的逐轮测试已有用户通过案例：夜景枝叶与灯影、竹叶近物、湖岸枯树、雾山远岸、人物与船影、云景、玉兰、彩鸟、雾山乡村、秋叶及礁岸。
+
+通过记录对应具体输入与选定版本，不能直接推广为整类题材均可稳定复现。密集景物、复杂建筑和强细节主体仍需逐图判断；复杂公园测试尚未通过。工具执行成功、材质相似与用户认可分别记录，不承诺像素级复制或还原摄影师的制作工艺。
+
+### 文档与资源
+
+| 文档 | 内容 |
+| --- | --- |
+| [当前验收记录](skills/dark-canvas/references/validation-status.md) | 用户选定版本与未解决范围 |
+| [技能入口](skills/dark-canvas/SKILL.md) | 执行流程、参考选择与适用范围 |
+| [画布与光色](skills/dark-canvas/references/canvas-and-light.md) | 经纬、曝光、色彩及局部效果 |
+| [作品索引](skills/dark-canvas/references/reference-map.md) | 按可见表达选择参考 |
+| [逐图观察](skills/dark-canvas/references/reference-study.md) | 构图、主体、背景与表面分析 |
+| [主题适配](skills/dark-canvas/references/landscape-adaptation.md) | 适配建议与历次测试记录 |
+| [编辑模板](skills/dark-canvas/references/prompts.md) | 初次编辑与定向修正请求 |
+| [成品验收](skills/dark-canvas/references/acceptance.md) | 光色、主体、布面与交付检查 |
+| [素材说明](ASSETS.md) · [来源记录](SOURCES.md) | 图片性质、来源与归属依据 |
+
+参考研究包含 24 张用户提供的作品观察，其中一张已排除、23 张参与目标研究。原作品、测试原片及新生成测试结果仅保留本地，不随公开仓库或技能包分发。包内 Creative OS 案例为 AI 成图，素材目录中的真实亚麻与生成做旧示意分别标注来源。
+
+### 许可与归属
+
+原创文字与配置采用 [MIT License](LICENSE)。第三方素材适用各自许可，详见 [素材目录](skills/dark-canvas/assets/materials/NOTICE.md)。用户将摄影参考归于 Pablo Bueno；账号身份尚未独立核实，项目与摄影师无已声明的官方合作或背书关系。
+
+## English
+
+### Overview
+
+Dark Canvas is an image-to-image skill for image-generation agents, focused on landscapes, rural scenes, and natural subjects. It combines selective detail reduction, continuous tonal fields, localized softening, and a shared woven surface to create a quiet, poetic image with an affinity to Chinese landscape painting.
+
+The source photograph anchors lighting, exposure, dominant colors, subject pose, and composition. Surface wear and edge treatment follow the selected visual reference. Dark backgrounds, low horizons, and black silhouettes are optional properties rather than universal requirements.
+
+The repository provides skill instructions, visual observations, editing templates, and evaluation criteria. Image editing is performed by the host environment; no model service is included.
+
+### Getting started
+
+1. Download a skill package from [Releases](https://github.com/yunmin311/dark-canvas-image-skill/releases) and place its `dark-canvas` folder in your host's skill directory. Codex commonly uses `~/.codex/skills/`. Alternatively, use the repository's `skills/dark-canvas/` folder.
+2. Supply a source photograph and a visual reference. Public packages exclude user-provided photographic works; use your own reference or one of the two included, approved Creative OS AI examples.
+3. Invoke `$dark-canvas`, specifying the subject, composition, colors, and details that matter.
+4. Compare the result with the source and refine the most significant deviations. Select the final version through visual review.
 
 ```text
-用 $dark-canvas 转换这张照片，借黑白枯枝月参考中的旧布面磨损和含蓄气氛，原照片的颜色仍保持；旧痕和晕影分别按参考选择，不改成同一张山水。
+Use $dark-canvas to edit this photograph using the attached reference's
+thin forms and fine woven surface. Preserve source lighting, dominant
+colors, composition, and subject pose. Merge secondary detail and allow
+selected forms to blend into the background. Match wear and softening
+to the reference.
 ```
 
-## 选择而不是堆叠
+Current release: [v0.7.0](https://github.com/yunmin311/dark-canvas-image-skill/releases/tag/v0.7.0). See the [changelog](CHANGELOG.md) for changes; each package is a snapshot of its tagged version.
 
-| 项目 | 选项 | 保留的区别 |
-| --- | --- | --- |
-| 主体与色形 | 摄影 / 毛笔 / 剪影 / 雾化拖影 | 剪影可利落，摄影可保留自然细节，毛笔有方向性，柔化有分区 |
-| 基底与旧痕 | 弱纹理 / 细布面 / 轻旧痕 / 明显磨损 | 干净不自动变旧；残破是局部不均匀露底、旧斑和擦痕，不默认破洞/烧边 |
-| 边缘气氛 | 无 / 轻 / 明显柔和收边 | 晕影不等于阴云、漏光、运动柔化或黑框 |
+### Validation scope
 
-依据见 [参考分组](skills/dark-canvas/references/reference-map.md) 和 [配方](skills/dark-canvas/references/visual-recipe.md)。二十四份作品仅本地保存，公开包提供观察索引；缺少当前作品参考时可选用户认可的海岸/植物案例，不使用已否定场景。
+User-approved iterations on real photographs include night scenes with foliage and lights, bamboo, bare shoreline trees, misty landscapes, people and boats, clouds, magnolia, a colorful bird, a mountain village, autumn leaves, and a rocky coast.
 
-当前工作文件夹里的本地 skill 带有被 Git 忽略的私有作品库 `assets/user-reference/`，agent 可按索引真正打开并传入作品。公开 ZIP 不含用户作品；外部安装须用本次附图或包内已认可案例。文字风格标签不能替代图像参考。
+Approval applies to individual inputs and selected versions. It does not establish reliable reproduction across an entire subject category. Dense scenes, complex architecture, and highly detailed subjects still require individual evaluation; the complex park test remains unapproved. Tool completion, material similarity, and user approval are recorded separately. The project does not promise pixel-exact reproduction or reconstruction of a photographer's production process.
 
-## 素材与实际交付
+### Documentation and assets
 
-[素材目录](skills/dark-canvas/assets/materials/NOTICE.md) 区分原始 CC0 亚麻贴图与 AI 做旧示意片。只借纤维/磨损形態，不借灰白色或照搬贴图对比。材质已经适合时不强制另附贴图，作品参考决定成图的细密程度。新增示意片不是摄影师原素材或实拍旧画布。
+| Document | Purpose |
+| --- | --- |
+| [Current validation status](skills/dark-canvas/references/validation-status.md) | Selected outputs and unresolved scope |
+| [Skill entrypoint](skills/dark-canvas/SKILL.md) | Workflow, reference selection, and scope |
+| [Canvas and light](skills/dark-canvas/references/canvas-and-light.md) | Weave, exposure, color, and local effects |
+| [Reference index](skills/dark-canvas/references/reference-map.md) | Selecting references by visible treatment |
+| [Reference study](skills/dark-canvas/references/reference-study.md) | Composition, subjects, backgrounds, and surfaces |
+| [Subject adaptation](skills/dark-canvas/references/landscape-adaptation.md) | Adaptation guidance and historical test records |
+| [Editing templates](skills/dark-canvas/references/prompts.md) | Initial edits and targeted corrections |
+| [Acceptance criteria](skills/dark-canvas/references/acceptance.md) | Visual and delivery checks |
+| [Asset notes](ASSETS.md) · [Sources](SOURCES.md) | Provenance and attribution |
 
-生成后实际查看原图、作品与输出；关键项失败最多作两次针对修正。颜色或内容漂移时重新附原图，保留最佳候选与未达标项。用户视觉认可与作者自检分别记录；不能把写完 skill、文件校验或工具调用当成复刻成功。
+The reference study covers 24 user-supplied works; one is excluded and 23 inform the target study. Original works, test photographs, and newly generated test results remain local and are excluded from the public repository and packages. The included Creative OS examples are AI-generated. Actual linen textures and generated wear guides have separate provenance records.
 
-查看 [入口](skills/dark-canvas/SKILL.md)、[模板](skills/dark-canvas/references/prompts.md)、[成品检查](skills/dark-canvas/references/acceptance.md) 和 [本轮记录](examples/validation.md)。`preview.html` 只显示早期已认可案例与当前材质。本地另有完整作品筛选目录和真实照片前后对照；没有新建合成跨主题场景。
+### License and attribution
 
-摄影参考作者由用户指认为 Pablo Bueno，小红书主页身份未独立核实，见 [来源](SOURCES.md)。用户作品和源照片不随仓库分发。图片/素材性质见 [说明](ASSETS.md)，原创文字和配置采用 MIT。
+Original text and configuration use the [MIT License](LICENSE). Third-party assets retain their respective licenses; see the [material notices](skills/dark-canvas/assets/materials/NOTICE.md). The user attributes the photographic references to Pablo Bueno; the account identity has not been independently verified. No official affiliation or endorsement is asserted.
